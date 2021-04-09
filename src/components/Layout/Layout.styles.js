@@ -34,6 +34,7 @@ const Footer = styled.div`
   line-height: 17px;
   text-align: center;
   color: #828282;
+  margin-top: 5rem;
 `;
 
 export { Container, Navigation, Main, Footer };
