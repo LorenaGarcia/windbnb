@@ -143,7 +143,7 @@ const Modal = styled.div`
 `;
 
 const ModalContainer = styled.div`
-  min-height: 15rem;
+  min-height: 20rem;
   background-color: white;
   position: relative;
   padding: 3rem 5rem;
@@ -286,6 +286,14 @@ const ButtonCount = styled.button`
   outline: none;
 `;
 
+const Message = styled.p`
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  margin: 0;
+`;
+
 export {
   Container,
   Image,
@@ -308,4 +316,5 @@ export {
   Number,
   ButtonCount,
   ContainerButtonMobile,
+  Message,
 };

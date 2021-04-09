@@ -21,6 +21,7 @@ import {
   Number,
   ButtonCount,
   ContainerButtonMobile,
+  Message,
 } from "./Search.styles";
 import Logo from "../../images/logo.png";
 
@@ -41,6 +42,7 @@ const Search = ({
   plusChildren,
   addGuests,
   searchStays,
+  guestError,
 }) => {
   return (
     <Container>
@@ -55,11 +57,15 @@ const Search = ({
           />
         </ContainerInput>
         <ContainerInput sizeInput="35%">
-          <Input
-            placeholder="Add guests"
-            value={`${adults + children} guests`}
-            onClick={addGuests}
-          />
+          {adults > 0 || children > 0 ? (
+            <Input
+              placeholder="Add guests"
+              value={`${adults + children} guests`}
+              onClick={addGuests}
+            />
+          ) : (
+            <Input placeholder="Add guests" value={null} onClick={addGuests} />
+          )}
         </ContainerInput>
 
         <ContainerButton onClick={addLocation}>
@@ -107,6 +113,7 @@ const Search = ({
                 />
                 {isActiveGuests && (
                   <>
+                    {guestError && <Message>Guests are missing</Message>}
                     <Guests>
                       <Title>Adults</Title>
                       <Description>Ages 13 or above</Description>

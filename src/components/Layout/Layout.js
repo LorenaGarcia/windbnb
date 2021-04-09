@@ -9,6 +9,7 @@ const Layout = () => {
   const [modal, setModal] = useState(false);
   const [location, setLocation] = useState("");
   const [listLocation, setListLocation] = useState([]);
+  const [guestError, setGuestError] = useState(false);
   const [isActiveLocation, setIsActiveLocation] = useState(false);
   const [isActiveGuests, setIsActiveGuests] = useState(false);
   const [adults, setAdults] = useState(0);
@@ -76,12 +77,16 @@ const Layout = () => {
   };
 
   const searchStays = () => {
-    setModal(false);
+    setModal(adults === 0 || children === 0 ? true : false);
+    setGuestError(adults === 0 || children === 0 ? true : false);
+    let temp = "";
     if (location) {
-      let temp = "";
+      console.log("hola");
       temp = location.replace(", Finland", "");
       const resultStays = rooms.filter((value) => value.city.includes(temp));
       setResultsSearch(resultStays);
+    } else {
+      setResultsSearch([]);
     }
   };
 
@@ -105,6 +110,7 @@ const Layout = () => {
           plusChildren={plusChildren}
           addGuests={addGuests}
           searchStays={searchStays}
+          guestError={guestError}
         />
       </Navigation>
       <Main>
