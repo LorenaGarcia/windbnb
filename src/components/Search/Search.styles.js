@@ -34,6 +34,10 @@ const ContainerInputs = styled.div`
     width: 100%;
     margin-top: 3rem;
   }
+
+  @media (min-width: 481px) and (max-width: 950px) {
+    width: 50%;
+  }
 `;
 
 const Input = styled.input`

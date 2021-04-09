@@ -111,9 +111,9 @@ const Search = ({
                   onClick={addGuests}
                   value={`${adults + children} guests`}
                 />
+                {guestError && <Message>Guests are missing</Message>}
                 {isActiveGuests && (
                   <>
-                    {guestError && <Message>Guests are missing</Message>}
                     <Guests>
                       <Title>Adults</Title>
                       <Description>Ages 13 or above</Description>
