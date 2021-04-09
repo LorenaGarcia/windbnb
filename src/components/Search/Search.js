@@ -20,6 +20,7 @@ import {
   Count,
   Number,
   ButtonCount,
+  ContainerButtonMobile,
 } from "./Search.styles";
 import Logo from "../../images/logo.png";
 
@@ -61,7 +62,7 @@ const Search = ({
           />
         </ContainerInput>
 
-        <ContainerButton>
+        <ContainerButton onClick={addLocation}>
           <Icon>
             <span className="material-icons">search</span>
           </Icon>
@@ -75,6 +76,8 @@ const Search = ({
               <ContainerInputModal sizeInput="45%">
                 <Label>location</Label>
                 <Input
+                  isMobile={true}
+                  isMobileBottom={true}
                   isActive={isActiveLocation && isActiveLocation}
                   placeholder="Add location"
                   value={location}
@@ -85,6 +88,7 @@ const Search = ({
                   locations &&
                   locations.map((location, index) => (
                     <Location
+                      isMobile={true}
                       key={index}
                       onClick={() => selectLocation(location.name)}
                     >
@@ -95,6 +99,7 @@ const Search = ({
               </ContainerInputModal>
               <ContainerInputModal sizeInput="35%">
                 <Input
+                  isMobile={true}
                   placeholder="Add guests"
                   isActive={isActiveGuests && isActiveGuests}
                   onClick={addGuests}
@@ -123,9 +128,9 @@ const Search = ({
                   </>
                 )}
               </ContainerInputModal>
-              <ContainerButton>
+              <ContainerButtonMobile>
                 <Button onClick={searchStays}>Search</Button>
-              </ContainerButton>
+              </ContainerButtonMobile>
             </ContainerElements>
           </ModalContainer>
         </Modal>

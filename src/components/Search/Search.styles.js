@@ -7,6 +7,11 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const Image = styled.img`
@@ -24,6 +29,11 @@ const ContainerInputs = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    margin-top: 3rem;
+  }
 `;
 
 const Input = styled.input`
@@ -42,6 +52,12 @@ const Input = styled.input`
     outline: none;
     border: 1px solid #333333;
   }
+
+  @media (max-width: 480px) {
+    box-shadow: ${(props) =>
+      props.isMobile ? "0px 1px 6px rgba(0, 0, 0, 0.1)" : "none"};
+    margin-bottom: ${(props) => (props.isMobileBottom ? "5rem" : "0")};
+  }
 `;
 
 const ContainerInput = styled.div`
@@ -49,11 +65,32 @@ const ContainerInput = styled.div`
   border-right: 1px solid #f2f2f2;
   height: 55px;
   padding-right: 1.5rem;
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 `;
 
 const ContainerButton = styled.div`
   width: 20%;
   height: 55px;
+
+  @media (max-width: 480px) {
+    width: 100%;
+    text-align: center;
+  }
+`;
+
+const ContainerButtonMobile = styled.div`
+  width: 20%;
+  height: 55px;
+
+  @media (max-width: 480px) {
+    width: 95%;
+    text-align: center;
+    position: absolute;
+    bottom: 2rem;
+  }
 `;
 
 const Button = styled.button`
@@ -73,6 +110,11 @@ const Button = styled.button`
   font-size: 14px;
   line-height: 18px;
   color: #f2f2f2;
+
+  @media (max-width: 480px) {
+    margin-left: 0;
+    width: 40%;
+  }
 `;
 
 const Icon = styled.div`
@@ -105,6 +147,11 @@ const ModalContainer = styled.div`
   background-color: white;
   position: relative;
   padding: 3rem 5rem;
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    min-height: 30rem;
+  }
 `;
 
 const ContainerElements = styled.div`
@@ -114,6 +161,11 @@ const ContainerElements = styled.div`
   align-items: flex-start;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
   border-radius: 16px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    box-shadow: none;
+  }
 `;
 
 const ContainerInputModal = styled.div`
@@ -121,6 +173,12 @@ const ContainerInputModal = styled.div`
   width: ${(props) => (props.sizeInput ? props.sizeInput : "20%")};
   border-right: 1px solid #f2f2f2;
   height: 55px;
+
+  @media (max-width: 480px) {
+    width: 95%;
+    border-right: 0;
+    margin-bottom: 0.2rem;
+  }
 `;
 
 const Label = styled.label`
@@ -249,4 +307,5 @@ export {
   Count,
   Number,
   ButtonCount,
+  ContainerButtonMobile,
 };

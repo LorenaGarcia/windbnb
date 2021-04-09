@@ -29,10 +29,12 @@ const Layout = () => {
     setIsActiveLocation(true);
     setIsActiveGuests(false);
     setLocation(e.target.value);
-    const results = locations.filter((value) =>
-      value.name.toUpperCase().includes(location.toUpperCase())
-    );
-    setListLocation(results);
+    if (location) {
+      const results = locations.filter((value) =>
+        value.name.toUpperCase().includes(location.toUpperCase())
+      );
+      setListLocation(results);
+    }
   };
 
   const selectLocation = (value) => {
@@ -75,14 +77,13 @@ const Layout = () => {
 
   const searchStays = () => {
     setModal(false);
-    let temp = "";
-    temp = location.replace(", Finland", "");
-    const resultStays = rooms.filter((value) => value.city.includes(temp));
-    console.log("results", resultStays);
-    setResultsSearch(resultStays);
+    if (location) {
+      let temp = "";
+      temp = location.replace(", Finland", "");
+      const resultStays = rooms.filter((value) => value.city.includes(temp));
+      setResultsSearch(resultStays);
+    }
   };
-
-  console.log(resultsSearch);
 
   return (
     <Container>
