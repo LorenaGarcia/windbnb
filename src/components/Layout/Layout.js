@@ -77,8 +77,8 @@ const Layout = () => {
   };
 
   const searchStays = () => {
-    setModal(adults === 0 || children === 0 ? true : false);
-    setGuestError(adults === 0 || children === 0 ? true : false);
+    setModal(adults === 0 ? true : false);
+    setGuestError(adults === 0 ? true : false);
     let temp = "";
     if (location) {
       console.log("hola");
