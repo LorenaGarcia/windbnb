@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/windbnb/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/windbnb/static/js/main.ffbff37d.chunk.js",
-    "main.js.map": "/windbnb/static/js/main.ffbff37d.chunk.js.map",
+    "main.js": "/windbnb/static/js/main.a5688592.chunk.js",
+    "main.js.map": "/windbnb/static/js/main.a5688592.chunk.js.map",
     "runtime-main.js": "/windbnb/static/js/runtime-main.e40d916d.js",
     "runtime-main.js.map": "/windbnb/static/js/runtime-main.e40d916d.js.map",
     "static/js/2.2b95fca1.chunk.js": "/windbnb/static/js/2.2b95fca1.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e40d916d.js",
     "static/js/2.2b95fca1.chunk.js",
     "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.ffbff37d.chunk.js"
+    "static/js/main.a5688592.chunk.js"
   ]
 }
